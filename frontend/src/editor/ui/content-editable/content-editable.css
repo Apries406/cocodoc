@@ -1,0 +1,12 @@
+.ContentEditable__root {
+  position: relative;
+  min-height: 500px;
+  background: #fff;
+}
+
+
+.ContentEditable__placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
