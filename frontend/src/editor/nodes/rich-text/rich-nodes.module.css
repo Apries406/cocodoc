@@ -1,0 +1,69 @@
+.zone {
+  padding: 2px;
+
+  &:hover {
+    background-color: rgba(206, 208, 212, 0.3);
+  }
+}
+
+.co-heading-h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.co-heading-h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.co-heading-h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.co-heading-h4 {
+  font-size: 14px;
+  font-weight: 600;
+}
+.co-heading-h5 {
+  font-size: 12px;
+  font-weight: 600;
+}
+.co-heading-h6 {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* 确保 placeholder 在空内容时显示 */
+.co-heading-h1:has(br:only-child)::before,
+.co-heading-h2:has(br:only-child)::before,
+.co-heading-h3:has(br:only-child)::before,
+.co-heading-h4:has(br:only-child)::before,
+.co-heading-h5:has(br:only-child)::before,
+.co-heading-h6:has(br:only-child)::before {
+  display: block;
+  content: attr(data-placeholder); /* 使用 data-placeholder 属性作为内容 */
+  color: rgba(150, 150, 150, 0.5); /* 设置 placeholder 的颜色 */
+  font-style: italic;              /* 设置斜体以区分 placeholder */
+  position: absolute;              /* 让 placeholder 显示在合适位置 */
+  pointer-events: none;            /* 防止 placeholder 影响点击事件 */
+}
+
+
+.co-quote {
+  /* display: flex; */
+  align-items: center;
+  margin: 0;
+  margin-left: 6px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: rgb(101, 103, 107);
+  border-left-color: rgb(206, 208, 212);
+  border-left-width: 2px;
+  border-left-style: solid;
+  padding-left: 5px;
+  background-color: rgba(206, 208, 212, 0.3);
+}
+
+.co-code {
+  padding: 1px;
+  background-color: #f5f6f7;
+  border: 1px solid #dee0e3;
+}

@@ -15,13 +15,13 @@ import { MentionNode } from './MentionNode';
 import { EquationNode } from './EquationNode';
 import { KeywordNode } from './KeywordNode';
 import { TweetNode } from './TweetNode';
-import { CoQuoteNode } from './rich-text/quote/QuoteNode';
+import { CoQuoteNode } from './rich-text/QuoteNode';
+import { CoHeadingNode } from './rich-text/HeadingNode';
+import { CoCodeNode } from './rich-text';
 
 const InitConfigNodes: Array<Klass<LexicalNode> | LexicalNodeReplacement> = [
-  HeadingNode,
   ListNode,
   ListItemNode,
-  CodeNode,
   TableNode,
   TableCellNode,
   TableRowNode,
@@ -44,6 +44,18 @@ const InitConfigNodes: Array<Klass<LexicalNode> | LexicalNodeReplacement> = [
     replace: QuoteNode,
     with: (_node: QuoteNode) => new CoQuoteNode(),
     withKlass: CoQuoteNode,
+  },
+  CoHeadingNode,
+  {
+    replace: HeadingNode,
+    with: (node: HeadingNode) => new CoHeadingNode(node.__tag),
+    withKlass: CoHeadingNode,
+  },
+  CoCodeNode,
+  {
+    replace: CodeNode,
+    with: (_node: CodeNode) => new CoCodeNode(),
+    withKlass: CoCodeNode,
   }
 ];
 

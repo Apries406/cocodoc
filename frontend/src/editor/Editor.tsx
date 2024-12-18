@@ -4,22 +4,19 @@ import {RichTextPlugin} from '@lexical/react/LexicalRichTextPlugin';
 import { LexicalComposer } from '@lexical/react/LexicalComposer';
 
 
-// import { ContentEditable } from './ui'
-import { MarkdownPlugin, EquationsPlugin, EmojisPlugin } from '@/editor/plugin';
+import { ContentEditable } from './ui'
+import { MarkdownPlugin, EquationsPlugin, EmojisPlugin, TreeViewPlugin } from '@/editor/plugin';
 
 import { createWebsocketProvider } from './collaboration';
 
 import './Editor.css';
 
 import InitConfigNodes from '@/editor/nodes/initConfigNodes';
-import EditorThemeClasses from '../editor/themes/PlaygroundEditorTheme';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { getRandomUserProfile, UserProfile } from './utils/collab';
 import { Provider } from '@lexical/yjs';
 import * as Y from 'yjs';
-import { ContentEditable } from '@lexical/react/LexicalContentEditable';
-import { QuoteNode } from '@lexical/rich-text';
-import {CoQuoteNode} from './nodes/rich-text/quote/QuoteNode'
+// import { ContentEditable } from '@lexical/react/LexicalContentEditable';
 
 const initialConfig = {
   editorState: null,
@@ -28,7 +25,7 @@ const initialConfig = {
   onError: (error: Error) => {
     throw error;
   },
-  theme: EditorThemeClasses,
+  theme: {}, // 留作自定义使用
 };
 
 interface ActiveUserProfile extends UserProfile {
@@ -90,13 +87,13 @@ export default function CocoEditor() {
       />
       <div className='editor-container'>
         <RichTextPlugin
-          contentEditable={<ContentEditable/>}
-          placeholder={<div>Start typing...</div>}
+          contentEditable={<ContentEditable placeholder='Start typing...' />}
           ErrorBoundary={LexicalErrorBoundary}
         />
         <MarkdownPlugin />
         <EquationsPlugin />
         <EmojisPlugin />
+        <TreeViewPlugin />
       </div>
     </LexicalComposer>
        

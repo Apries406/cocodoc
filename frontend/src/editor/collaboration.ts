@@ -16,7 +16,7 @@ export function createWebsocketProvider(
   }
 
 
-  return new WebsocketProvider('ws://localhost:3000/yjs?document=', id, doc, {
+  return new WebsocketProvider('ws://10.84.147.159:3000/yjs?document=', id, doc, {
     connect: false,
   }) as unknown as Provider;
 }

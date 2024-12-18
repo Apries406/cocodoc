@@ -1,4 +1,50 @@
-.quote {
+.zone {
+  padding: 2px;
+
+  &:hover {
+    background-color: rgba(206, 208, 212, 0.3);
+  }
+}
+
+.co-heading-h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.co-heading-h1::before {
+  content: "H1";
+  color: rgb(101, 103, 107);
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 5px;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+.co-heading-h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.co-heading-h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.co-heading-h4 {
+  font-size: 14px;
+  font-weight: 600;
+}
+.co-heading-h5 {
+  font-size: 12px;
+  font-weight: 600;
+}
+.co-heading-h6 {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.co-quote {
+  display: flex;
+  align-items: center;
   margin: 0;
   margin-left: 6px;
   margin-bottom: 10px;
